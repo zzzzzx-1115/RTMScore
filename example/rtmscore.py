@@ -185,7 +185,7 @@ def main():
 		dfx.index = dfx.id
 		df = pd.concat([dfx["score"],df],axis=1)
 		df.sort_values("score", ascending=False, inplace=True)	
-		df.to_csv("%s_at.csv"%inargs.outprefix)
+		df.to_csv("%s_at.csv"%inargs.outprefix, mode='a')
 	elif inargs.res_contribution:
 		ids, scores, resids, res_contrs = scoring(prot=inargs.prot, 
 											lig=inargs.lig, 
@@ -207,7 +207,7 @@ def main():
 		dfx.index = dfx.id
 		df = pd.concat([dfx["score"],df],axis=1)
 		df.sort_values("score", ascending=False, inplace=True)	
-		df.to_csv("%s_res.csv"%inargs.outprefix)			
+		df.to_csv("%s_res.csv"%inargs.outprefix, mode='a')
 	else:
 		ids, scores = scoring(prot=inargs.prot, 
 							lig=inargs.lig, 
@@ -222,7 +222,7 @@ def main():
 							)
 		df = pd.DataFrame(zip(*(ids, scores)),columns=["id","score"])
 		df.sort_values("score", ascending=False, inplace=True)
-		df.to_csv("%s.csv"%inargs.outprefix, index=False)
+		df.to_csv("%s.csv"%inargs.outprefix, index=False, mode='a')
 
 
 if __name__ == '__main__':

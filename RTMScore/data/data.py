@@ -134,7 +134,7 @@ class VSDataset(Dataset):
 					self.graphp = prot_to_graph(self.prot, cutoff)
 				except:
 					raise ValueError('The graph of pocket cannot be generated')
-			
+		print(ligs)
 		if isinstance(ligs,np.ndarray) or isinstance(ligs,list):
 			if isinstance(ligs[0], Chem.rdchem.Mol):
 				self.ligs = ligs

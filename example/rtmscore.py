@@ -22,7 +22,7 @@ def Input():
 	p.add_argument('-p','--prot', required=True, 
 									help='Input protein file (.pdb)')
 	p.add_argument('-l','--lig', required=True, 
-									help='Input ligand file (.sdf/.mol2)')
+									help='Input ligand file (.sdf/.mol2)', nargs='+')
 	p.add_argument('-m','--model', default="../trained_models/rtmscore_model1.pth", 
 									help='trained model path (default: "../trained_models/rtmscore_model1.pth")')								
 	p.add_argument('-o','--outprefix', default="out", 

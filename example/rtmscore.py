@@ -163,6 +163,7 @@ def main():
 	args["hidden_dim"] = 128 
 	args["n_gaussians"] = 10
 	args["dropout_rate"] = 0.10
+	print(inargs.lig)
 	if inargs.atom_contribution:
 		ids, scores, atids, at_contrs = scoring(prot=inargs.prot, 
 											lig=inargs.lig, 

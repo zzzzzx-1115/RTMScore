@@ -15,7 +15,7 @@ import torch.multiprocessing
 torch.multiprocessing.set_sharing_strategy('file_system')
 
 #you need to set the babel libdir first if you need to generate the pocket
-os.environ["BABEL_LIBDIR"] = "/home/shenchao/.conda/envs/my2/lib/openbabel/3.1.0"
+os.environ["BABEL_LIBDIR"] = "/home/ubuntu/anaconda3/envs/rtm/lib/openbabel/3.1.0"
 
 def Input():
 	p = argparse.ArgumentParser()
@@ -222,7 +222,7 @@ def main():
 							)
 		df = pd.DataFrame(zip(*(ids, scores)),columns=["id","score"])
 		df.sort_values("score", ascending=False, inplace=True)
-		df.to_csv("%s.csv"%inargs.outprefix, index=False, mode='a')
+		df.to_csv("%s.csv"%inargs.outprefix, index=False, mode='a', header=None)
 
 
 if __name__ == '__main__':
